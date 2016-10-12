@@ -16,6 +16,14 @@ All of them are included for convenience and can be combined ad lib.
 ## Table of contents
 
 - [First steps / Installation and requirements](/documentation/INSTALL.md)
+- [New Events Project](/documentation/PROJECT-EVENTS.md)
+- [New TYPO3 Project](/documentation/PROJECT-TYPO3.md)
+- [Customizing](/documentation/CUSTOMIZE.md)
+- [Services (Webserver, MySQL... Ports, Users, Passwords)](/documentation/SERVICES.md)
+- [Docker Quickstart](/documentation/DOCKER-QUICKSTART.md)
+- [Run your project](/documentation/DOCKER-STARTUP.md)
+- [Container detail info](/documentation/DOCKER-INFO.md)
+- [Troubleshooting](/documentation/TROUBLESHOOTING.md)
 
 ## Credits
 This Docker boilerplate is based on the [Webdevops TYPO3 Docker Boilerplate](https://github.com/webdevops/TYPO3-docker-boilerplate).
