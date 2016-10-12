@@ -26,22 +26,13 @@ case "$1" in
         ;;
 
     ###################################
-    ## TYPO3 NEOS
+    ## TYPO3 EVENTS SUITE
     ###################################
-    "neos")
-        execInDir "$CODE_DIR" "composer create-project typo3/neos-base-distribution \"$CODE_DIR\""
+    "events")
+        execInDir "./" "composer install"
+        execInDir "$CODE_DIR" "touch web/FIRST_INSTALL"
         ;;
 
-    ###################################
-    ## GIT
-    ###################################
-    "git")
-        if [ "$#" -lt 2 ]; then
-            echo "Missing git url"
-            exit 1
-        fi
-        git clone --recursive "$2" "$CODE_DIR"
-        ;;
 esac
 
 touch -- "$CODE_DIR/.gitkeep"

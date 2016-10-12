@@ -1,0 +1,43 @@
+{
+  "name": "DWenzel/t3events-suite",
+  "config": {
+    "vendor-dir": "app/vendor"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://composer.typo3.org/"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/dwenzel/t3events_course.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/dwenzel/t3events_reservation.git"
+    }
+  ],
+  "description": "TYPO3 CMS Base Distribution",
+  "license": "GPL-2.0+",
+  "require": {
+    "typo3/cms": "^7.6",
+    "dwenzel/t3events": "^0.29.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8",
+    "dwenzel/t3events": "dev-develop",
+    "cpsit/t3events_course": "dev-develop",
+    "cpsit/t3events_reservation": "dev-develop"
+  },
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": "app/web"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "TYPO3\\CMS\\Core\\Tests\\": "vendor/typo3/cms/typo3/sysext/core/Test/"
+    }
+  }
+}

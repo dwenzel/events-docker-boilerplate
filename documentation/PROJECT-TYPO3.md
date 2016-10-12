@@ -18,6 +18,7 @@ composer create-project typo3/cms-base-distribution app/
 touch app/FIRST_INSTALL app/.gitkeep
 ```
 
+This creates an empty TYPO3 project in app/web. All existing files will be removed!
 Feel free to modify your TYPO3 installation in your `app/` (a shared folder of Docker),
 most of the time there is no need to enter any Docker container.
 
