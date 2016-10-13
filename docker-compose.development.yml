@@ -4,7 +4,7 @@
 app:
   build: .
   dockerfile: Dockerfile.development
-  environment:
+  #environment:
     #PHP_XDEBUG_ENABLED: 1
     # replace <ip address> with the ip address of your host machine. See Xdebug section in etc/php/development.ini
     #XDEBUG_CONFIG: remote_host=<ip address> remote_log=/tmp/debug/xdebug.log remote_connect_back=off
