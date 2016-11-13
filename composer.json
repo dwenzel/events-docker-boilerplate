@@ -1,7 +1,17 @@
 {
-  "name": "DWenzel/t3events-suite",
+  "name": "dwenzel/events-docker-boilerplate",
+  "description": "A docker configuration for TYPO3 CMS with pre-installed extensions of the t3events suite. This package is intended for development purposes only.",
+  "license": "GPL-2.0+",
   "config": {
-    "vendor-dir": "app/vendor"
+    "vendor-dir": "app/vendor",
+    "preferred-install": {
+      "typo3/cms": "source",
+      "typo3/cms-core": "source",
+      "dwenzel/t3events": "source",
+      "cpsit/t3events_course": "source",
+      "cpsit/t3events_reservation": "source",
+      "*": "dist"
+    }
   },
   "repositories": [
     {
@@ -17,8 +27,6 @@
       "url": "https://github.com/dwenzel/t3events_reservation.git"
     }
   ],
-  "description": "TYPO3 CMS Base Distribution",
-  "license": "GPL-2.0+",
   "require": {
     "typo3/cms": "^7.6",
     "dwenzel/t3events": "^0.29.0"
@@ -35,9 +43,15 @@
       "web-dir": "app/web"
     }
   },
+  "autoload": {
+    "psr-4": {
+      "CPSIT\\T3eventsCourse\\": "Classes"
+    }
+  },
   "autoload-dev": {
     "psr-4": {
-      "TYPO3\\CMS\\Core\\Tests\\": "vendor/typo3/cms/typo3/sysext/core/Test/"
+      "CPSIT\\T3eventsCourse\\Tests\\": "Tests",
+      "TYPO3\\CMS\\Core\\Tests\\": "app/vendor/typo3/cms/typo3/sysext/core/Tests/"
     }
   }
 }
