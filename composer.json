@@ -8,6 +8,8 @@
       "typo3/cms": "source",
       "typo3/cms-core": "source",
       "dwenzel/t3events": "source",
+      "dwenzel/t3calendar": "source",
+      "dwenzel/notification_service": "source",
       "cpsit/t3events_course": "source",
       "cpsit/t3events_reservation": "source",
       "*": "dist"
@@ -15,26 +17,35 @@
   },
   "repositories": [
     {
-      "type": "composer",
-      "url": "https://composer.typo3.org/"
-    },
-    {
       "type": "vcs",
       "url": "https://github.com/dwenzel/t3events_course.git"
     },
     {
       "type": "vcs",
+      "url": "https://github.com/dwenzel/t3events.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/dwenzel/t3calendar.git"
+    },
+    {
+      "type": "vcs",
       "url": "https://github.com/dwenzel/t3events_reservation.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/dwenzel/notification_service.git"
     }
   ],
   "require": {
-    "typo3/cms": "^7.6",
-    "dwenzel/t3events": "^0.29.0"
+    "typo3/cms": "^7.6"
   },
   "require-dev": {
     "phpunit/phpunit": "^4.8",
-    "dwenzel/t3events": "dev-develop",
+    "dwenzel/t3events": "^0.29.0",
+    "dwenzel/t3calendar": "dev-develop",
     "cpsit/t3events_course": "dev-develop",
+    "dwenzel/notification_service": "dev-develop",
     "cpsit/t3events_reservation": "dev-develop"
   },
   "extra": {
