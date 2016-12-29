@@ -30,7 +30,7 @@ state:
 rebuild:
 	docker-compose stop
 	docker-compose rm --force app
-	docker-compose build --no-cache
+	docker-compose build --no-cache app
 	docker-compose up -d
 
 #############################

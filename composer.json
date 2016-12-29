@@ -46,7 +46,8 @@
     "dwenzel/t3calendar": "dev-develop",
     "cpsit/t3events_course": "dev-develop",
     "dwenzel/notification_service": "dev-develop",
-    "cpsit/t3events_reservation": "dev-develop"
+    "cpsit/t3events_reservation": "dev-develop",
+    "ichhabrecht/devtools": "^0.2.3"
   },
   "extra": {
     "typo3/cms": {
