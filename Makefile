@@ -30,7 +30,7 @@ state:
 rebuild:
 	docker-compose stop
 	docker-compose rm --force app
-	docker-compose build --no-cache
+	docker-compose build --no-cache app
 	docker-compose up -d
 
 #############################
@@ -64,12 +64,20 @@ build:
 	bash bin/build.sh
 
 clean:
-	test -d app/typo3temp && { rm -rf app/typo3temp/*; }
+	docker exec -i -u application $$(docker-compose ps -q app) /app/vendor/bin/typo3cms cache:flush
+
+db-schema-safe:
+	docker exec -i -u application $$(docker-compose ps -q app) /app/vendor/bin/typo3cms database:updateschema safe
+
+cleaner: mysql-restore clean db-schema-safe
 
 bash: shell
 
 shell:
 	docker exec -it -u application $$(docker-compose ps -q app) /bin/bash
+
+open:
+	touch app/web/typo3conf/ENABLE_INSTALL_TOOL
 
 root:
 	docker exec -it -u root $$(docker-compose ps -q app) /bin/bash
