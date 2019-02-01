@@ -5,14 +5,13 @@
   "config": {
     "vendor-dir": "app/vendor",
     "preferred-install": {
-      "typo3/cms": "source",
-      "typo3/cms-core": "source",
       "dwenzel/t3events": "source",
       "dwenzel/t3calendar": "source",
       "dwenzel/notification_service": "source",
       "cpsit/t3events_course": "source",
       "dwenzel/t3events-calendar": "source",
       "cpsit/t3events_reservation": "source",
+      "cpsit/t3events-template": "source",
       "*": "dist"
     }
   },
@@ -43,78 +42,24 @@
     },
     {
       "type": "vcs",
+      "url": "https://github.com/dwenzel/t3events_template.git"
+    },
+    {
+      "type": "vcs",
       "url": "https://github.com/dwenzel/notification_service.git"
     }
   ],
   "require": {
-    "typo3/cms": "^8.7",
-    "typo3/cms-belog": "^8.7",
-    "typo3/cms-beuser": "^8.7",
-    "typo3/cms-context-help": "^8.7",
-    "typo3/cms-fluid-styled-content": "^8.7",
-    "typo3/cms-felogin": "^8.7",
-    "typo3/cms-filelist": "^8.7",
-    "typo3/cms-extensionmanager": "^8.7",
-    "typo3/cms-lang": "^8.7",
-    "typo3/cms-cshmanual": "^8.7",
-    "typo3/cms-saltedpasswords": "^8.7",
-    "typo3/cms-scheduler": "^8.7",
-    "typo3/cms-sv": "^8.7",
-    "typo3/cms-about": "^8.7",
-    "typo3/cms-documentation": "^8.7",
-    "typo3/cms-filemetadata": "^8.7",
-    "typo3/cms-form": "^8.7",
-    "typo3/cms-func": "^8.7",
-    "typo3/cms-linkvalidator": "^8.7",
-    "typo3/cms-recycler": "^8.7",
-    "typo3/cms-sys-note": "^8.7",
-    "typo3/cms-t3editor": "^8.7",
-    "typo3/cms-wizard-crpages": "^8.7",
-    "typo3/cms-wizard-sortpages": "^8.7",
-    "typo3/cms-impexp": "^8.7",
-    "typo3/cms-info": "^8.7",
-    "typo3/cms-rte-ckeditor": "^8.7",
-    "typo3/cms-info-pagetsconfig": "^8.7",
-    "typo3/cms-lowlevel": "^8.7",
-    "typo3/cms-reports": "^8.7",
-    "typo3/cms-rsaauth": "^8.7",
-    "typo3/cms-setup": "^8.7",
-    "typo3/cms-tstemplate": "^8.7",
-    "typo3/cms-viewpage": "^8.7",
-    "helhum/typo3-console": "dev-master"
+    "typo3/minimal": "<9.2"
   },
   "require-dev": {
-    "phpunit/phpunit": "^5.6",
-    "nimut/testing-framework": "^1.1",
-    "dwenzel/t3events": "dev-develop",
-    "dwenzel/t3calendar": "dev-develop",
-    "cpsit/t3events_course": "dev-develop",
-    "dwenzel/t3events-calendar": "dev-develop",
-    "dwenzel/notification_service": "dev-feature/implementServiceAPI",
-    "cpsit/t3events_reservation": "dev-develop"
+    "nimut/testing-framework": "*",
+    "dwenzel/t3calendar": "dev-feature/version9Compatible"
   },
   "extra": {
     "typo3/cms": {
-      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "cms-package-dir": "app/vendor/typo3/cms",
       "web-dir": "app/web"
-    },
-    "helhum/typo3-console": {
-      "install-extension-dummy": false
     }
-  },
-  "scripts": {
-    "package-states": [
-      "php app/vendor/bin/typo3cms install:generatepackagestates"
-    ],
-    "folder-structure": [
-      "php app/vendor/bin/typo3cms install:fixfolderstructure"
-    ],
-    "pre-deploy": [
-      "# Scripts here will be executed after composer install"
-    ],
-    "post-autoload-dump": [
-      "@package-states",
-      "@folder-structure"
-    ]
   }
 }

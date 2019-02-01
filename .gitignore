@@ -4,3 +4,4 @@
 /app/*
 /docker-compose.yml
 /tmp
+/var
